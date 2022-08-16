@@ -8,16 +8,10 @@ require("dotenv").config()
 const fs = require("fs")
 const fsPromises = fs.promises
 const path = require("path")
-const validThemes = require("../src/themes/valid-themes.json")
-const valid = validThemes.valid
 
-const themeLabel =
-  process.env.hasOwnProperty("REACT_APP_THEME") &&
-  valid.find(e => e.label === process.env.REACT_APP_THEME.toLowerCase())
-    ? process.env.REACT_APP_THEME.toLowerCase()
-    : "generic"
+const themeLabel = "generic"
 
-const sourceDirectory = `./src/themes/${themeLabel}/public`
+const sourceDirectory = `./node_modules/@futuregov/poc-scout-with-external-themes--test-theme/${themeLabel}/public`
 
 async function copyDir(src, dest) {
   await fsPromises.mkdir(dest, { recursive: true })

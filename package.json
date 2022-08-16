@@ -5,6 +5,7 @@
   "dependencies": {
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
+    "@futuregov/poc-scout-with-external-themes--test-theme": "github:apricot13/poc-scout-with-external-themes--test-theme#main",
     "@reach/alert": "^0.10.1",
     "@reach/dialog": "^0.10.1",
     "@reach/router": "^1.3.3",
@@ -38,9 +39,9 @@
     "webpack-bundle-analyzer": "^3.7.0"
   },
   "scripts": {
-    "dev": "run-s add-public-files get-filters dev:app",
+    "dev": "run-s add-public-files dev:app",
     "dev:app": "react-scripts start",
-    "build": "run-s add-public-files get-filters build:app",
+    "build": "run-s add-public-files build:app",
     "build:app": "react-scripts build",
     "get-filters": "node jobs/get-filters",
     "add-public-files": "node jobs/add-public-files",
